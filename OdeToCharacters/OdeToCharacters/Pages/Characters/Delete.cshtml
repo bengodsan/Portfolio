@@ -1,0 +1,14 @@
+﻿@page "{characterId}"
+@model OdeToCharacters.Pages.Characters.DeleteModel
+@{
+}
+
+
+    <h2>Delete!</h2>
+    <div class="alert alert-danger">
+        Are you certain you wish to remove @Model.Character.Name?
+    </div>
+    <form method="post">
+        <button type="submit" class="btn btn-danger">Confirm</button>
+        <a asp-page="./List" class="btn btn-default">Cancel</a>
+    </form>

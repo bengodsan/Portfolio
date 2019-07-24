@@ -1,0 +1,22 @@
+﻿@page "{characterId:int}"
+@model OdeToCharacters.Pages.Characters.DetailModel
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h2>@Model.Character.Name</h2>
+@if (Model.Message != null)
+{
+    <div class="alert alert-info">@Model.Message</div>
+}
+<div>
+    Id: @Model.Character.Id
+</div>
+<div>
+    Place of Origin: @Model.Character.PlaceOfOrigin
+</div>
+<div>
+    Race: @Model.Character.Race
+</div>
+
+<a asp-page="./List" class="btn btn-default">Character List</a>

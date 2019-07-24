@@ -1,0 +1,34 @@
+﻿@page "{characterId:int?}"
+@model OdeToCharacters.Pages.Characters.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Editing: @Model.Character.Name</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Character.Id" />
+    <div class="form-group">
+        <label asp-for="Character.Name"></label>
+        <input asp-for="Character.Name" class="form-control" />
+        <span class="text-danger" asp-validation-for="Character.Name"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Character.PlaceOfOrigin"></label>
+        <input asp-for="Character.PlaceOfOrigin" class="form-control" />
+        <span class="text-danger" asp-validation-for="Character.PlaceOfOrigin"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Character.Race"></label>
+        <select class="form-control" asp-for="Character.Race"
+                                     asp-items="Model.Races">
+            
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

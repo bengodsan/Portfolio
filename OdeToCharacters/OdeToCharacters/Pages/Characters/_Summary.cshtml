@@ -1,0 +1,26 @@
+﻿@using OdeToCharacters.Core
+@model Character
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3>@Model.Name</h3>
+    </div>
+    <div class="panel-body">
+        <span>Origin: @Model.PlaceOfOrigin.</span>
+        <span>Race: @Model.Race</span>
+    </div>
+    <div class="panel-footer">
+        <a class="btn btn-lg"
+           asp-page="./Detail" asp-route-characterId="@Model.Id">
+            <i class="glyphicon glyphicon-zoom-in"></i>
+        </a>
+        <a class="btn btn-lg"
+           asp-page="./Edit" asp-route-characterId="@Model.Id">
+            <i class="glyphicon glyphicon-edit"></i>
+        </a>
+        <a class="btn btn-lg"
+           asp-page="./Delete" asp-route-characterId="@Model.Id">
+            <i class="glyphicon glyphicon-trash"></i>
+        </a>
+    </div>
+</div>
